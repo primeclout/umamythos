@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story Library | Uma Mythos</title>
+    <meta name="description" content="Browse ancient Indian stories, illustrated and retold.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FAF7F2;
+            --color-warm-white: #FFFCF7;
+            --color-ink: #2C2416;
+            --color-ink-soft: #4A4238;
+            --color-ink-muted: #8B8279;
+            --color-terracotta: #A04030;
+            --color-gold: #C4A86B;
+            --color-gold-soft: #D4BC8A;
+            --color-border: #E8E2D9;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Spectral', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--color-ink);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 247, 242, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--color-ink);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--color-ink-soft);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-terracotta);
+        }
+
+        /* Main content */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 120px 24px 60px;
+        }
+
+        /* Page header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 5vw, 3rem);
+            font-weight: 400;
+            color: var(--color-ink);
+            margin-bottom: 16px;
+            letter-spacing: 0.08em;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-display);
+            font-size: 1.15rem;
+            font-style: italic;
+            color: var(--color-ink-muted);
+        }
+
+        /* Story grid */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .story-card {
+            background: var(--color-warm-white);
+            border: 1px solid var(--color-border);
+            border-radius: 4px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .story-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(44, 36, 22, 0.1);
+        }
+
+        .story-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .story-card-content {
+            padding: 24px;
+        }
+
+        .story-card-source {
+            font-family: var(--font-display);
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-terracotta);
+            margin-bottom: 8px;
+        }
+
+        .story-card-title {
+            font-family: var(--font-display);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: 8px;
+        }
+
+        .story-card-description {
+            font-size: 0.95rem;
+            color: var(--color-ink-soft);
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+
+        .story-card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--color-ink-muted);
+        }
+
+        .story-card-link {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--color-terracotta);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: gap 0.3s ease;
+        }
+
+        .story-card-link:hover {
+            gap: 10px;
+        }
+
+        .story-card-link svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Coming soon state */
+        .story-card.coming-soon {
+            opacity: 0.6;
+        }
+
+        .story-card.coming-soon .story-card-link {
+            color: var(--color-ink-muted);
+            pointer-events: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 60px 24px;
+            border-top: 1px solid var(--color-border);
+            margin-top: 60px;
+        }
+
+        .footer-text {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-ink-muted);
+        }
+
+        .footer-mark {
+            margin-top: 16px;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: var(--color-ink-soft);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav {
+                padding: 12px 16px;
+            }
+
+            main {
+                padding: 100px 16px 40px;
+            }
+
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="#2C2416" stroke-width="1" fill="none" opacity="0.4"/>
+                <path d="M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z" stroke="#A04030" stroke-width="1" fill="none"/>
+                <circle cx="24" cy="26" r="4" stroke="#C4A86B" stroke-width="1.5" fill="#C4A86B" fill-opacity="0.3"/>
+            </svg>
+            <span class="nav-logo-text">Uma Mythos</span>
+        </a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="page-header">
+            <h1 class="page-title">Story Library</h1>
+            <p class="page-subtitle">Ancient tales, illustrated and retold</p>
+        </header>
+
+        <div class="story-grid">
+            <!-- The Formless King -->
+            <article class="story-card">
+                <img src="stories/the-formless-king/images/page-01.png" alt="The Formless King" class="story-card-image">
+                <div class="story-card-content">
+                    <p class="story-card-source">Original Series</p>
+                    <h2 class="story-card-title">The Formless King</h2>
+                    <p class="story-card-description">When Prince Devagupta's father is poisoned, he must navigate treachery and discover what it truly means to rule.</p>
+                    <div class="story-card-meta">
+                        <span>8 episodes</span>
+                        <a href="stories/the-formless-king/episode-1.html" class="story-card-link">
+                            Begin reading
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Coming Soon: Birth of Ganesha -->
+            <article class="story-card coming-soon">
+                <div class="story-card-image" style="background: linear-gradient(135deg, #E8E2D9, #D4C8B8); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: var(--font-display); color: var(--color-ink-muted); font-style: italic;">Coming soon</span>
+                </div>
+                <div class="story-card-content">
+                    <p class="story-card-source">Puranas</p>
+                    <h2 class="story-card-title">The Birth of Ganesha</h2>
+                    <p class="story-card-description">How Parvati created Ganesha, and how he came to bear the head of an elephant.</p>
+                    <div class="story-card-meta">
+                        <span>4 episodes</span>
+                        <span class="story-card-link">Coming soon</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Coming Soon: Savitri and Satyavan -->
+            <article class="story-card coming-soon">
+                <div class="story-card-image" style="background: linear-gradient(135deg, #E8E2D9, #D4C8B8); display: flex; align-items: center; justify-content: center;">
+                    <span style="font-family: var(--font-display); color: var(--color-ink-muted); font-style: italic;">Coming soon</span>
+                </div>
+                <div class="story-card-content">
+                    <p class="story-card-source">Mahabharata</p>
+                    <h2 class="story-card-title">Savitri and Satyavan</h2>
+                    <p class="story-card-description">A princess who argued with Death himself to save her husband's life.</p>
+                    <div class="story-card-meta">
+                        <span>6 episodes</span>
+                        <span class="story-card-link">Coming soon</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p class="footer-text">Stories choose who carries them.</p>
+        <p class="footer-mark">Uma Mythos</p>
+    </footer>
+</body>
+</html>

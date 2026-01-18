@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma Mythos — A Storytelling House</title>
+    <meta name="description" content="Ancient stories, illustrated and retold.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22' stroke='%23D4B896' stroke-width='2' fill='%232D3A4A'/%3E%3Cpath d='M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z' stroke='%23D4826A' stroke-width='2' fill='none'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23D4B896'/%3E%3C/svg%3E">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22' stroke='%23D4B896' stroke-width='2' fill='%232D3A4A'/%3E%3Cpath d='M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z' stroke='%23D4826A' stroke-width='2' fill='none'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23D4B896'/%3E%3C/svg%3E">
+    
+    <!-- Google Analytics - Replace G-PDNFWKKVZ7 with your actual Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNFWKKVZ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PDNFWKKVZ7');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FAF7F2;
+            --color-warm-white: #FFFCF7;
+            --color-text-primary: #FFFFFF;
+            --color-text-secondary: #E8E0D8;
+            --color-text-muted: #C8C0B8;
+            --color-terracotta: #E8967A;
+            --color-terracotta-soft: #F0A888;
+            --color-gold: #E8C89A;
+            --color-gold-soft: #F0D8B0;
+            --color-border: rgba(255, 248, 240, 0.15);
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Spectral', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 19px;
+            line-height: 1.85;
+            color: var(--color-text-primary);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            position: relative;
+        }
+
+        /* Animated Twilight Background */
+        .animated-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        .animated-bg svg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(to bottom, rgba(45, 58, 74, 0.9) 0%, rgba(45, 58, 74, 0) 100%);
+            transition: background 0.3s ease;
+        }
+
+        nav.scrolled {
+            background: rgba(35, 45, 58, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--color-cream);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-cream);
+        }
+
+        /* Mobile menu button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        .mobile-menu-btn svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--color-cream);
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Header - compact on mobile */
+        header {
+            padding: 80px 0 20px;
+            text-align: center;
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .logo-mark {
+            width: 44px;
+            height: 44px;
+            margin: 0 auto 16px;
+        }
+
+        .logo-mark svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.2rem, 7vw, 4rem);
+            font-weight: 400;
+            letter-spacing: 0.1em;
+            color: var(--color-text-primary);
+            margin-bottom: 12px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .tagline {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            font-weight: 400;
+            color: var(--color-gold);
+            letter-spacing: 0.04em;
+        }
+
+        /* Main content */
+        main {
+            padding: 20px 0 60px;
+        }
+
+        /* Hero section - compact */
+        .hero-text {
+            text-align: center;
+            margin-bottom: 28px;
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .invitation-label {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: #FFFFFF;
+            background: linear-gradient(135deg, var(--color-terracotta), var(--color-terracotta-soft));
+            border: none;
+            padding: 12px 28px;
+            margin-bottom: 24px;
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(232, 150, 122, 0.4);
+        }
+
+        .headline {
+            font-family: var(--font-display);
+            font-size: clamp(1.6rem, 4.5vw, 2.5rem);
+            font-weight: 400;
+            color: var(--color-text-primary);
+            line-height: 1.4;
+            margin-bottom: 16px;
+            letter-spacing: 0.02em;
+        }
+
+        .subtext-emphasis {
+            font-family: var(--font-display);
+            font-size: 1.35rem;
+            font-weight: 400;
+            color: var(--color-gold);
+            margin-bottom: 20px;
+            letter-spacing: 0.02em;
+        }
+
+        .subtext {
+            font-family: var(--font-body);
+            font-size: 1.15rem;
+            font-weight: 300;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Decorative divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 20px 0;
+            color: var(--color-gold);
+        }
+
+        .divider-line {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--color-gold-soft), transparent);
+        }
+
+        .divider-ornament {
+            font-size: 12px;
+            letter-spacing: 8px;
+            opacity: 0.85;
+        }
+
+        /* ============================================
+           FEATURED STORY - PRIMARY CTA
+           Make this the most prominent element
+           ============================================ */
+        .featured {
+            text-align: center;
+            margin-bottom: 24px;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+
+        .featured-label {
+            display: inline-block;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: #1A1818;
+            background: linear-gradient(135deg, var(--color-gold-soft), var(--color-gold));
+            padding: 10px 24px;
+            margin-bottom: 18px;
+            border-radius: 24px;
+            box-shadow: 0 4px 16px rgba(232, 200, 154, 0.4);
+        }
+
+        .featured h2 {
+            font-family: var(--font-display);
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: var(--color-text-primary);
+            margin-bottom: 10px;
+        }
+
+        .featured p {
+            font-size: 1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 20px;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        /* PRIMARY CTA - Big prominent button */
+        .btn-start {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            color: #1A1818;
+            background: linear-gradient(135deg, var(--color-terracotta-soft), var(--color-terracotta));
+            padding: 16px 32px;
+            border-radius: 4px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(232, 150, 122, 0.35);
+            width: 100%;
+            max-width: 320px;
+        }
+
+        .btn-start:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(232, 150, 122, 0.45);
+        }
+
+        .btn-start svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ============================================
+           LIBRARY CTA - Secondary, subtle
+           ============================================ */
+        .library-cta {
+            text-align: center;
+            margin: 20px 0 48px;
+            animation: fadeInUp 1s ease-out 0.5s both;
+        }
+
+        .btn-library {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-size: 1.05rem;
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            color: var(--color-text-primary);
+            background: rgba(255, 255, 255, 0.1);
+            padding: 14px 28px;
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            border-radius: 28px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-library:hover {
+            color: var(--color-text-primary);
+            border-color: rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .btn-library svg {
+            width: 16px;
+            height: 16px;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-library:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* Sections */
+        section {
+            margin-bottom: 40px;
+            animation: fadeInUp 1s ease-out both;
+        }
+
+        section:nth-child(4) { animation-delay: 0.6s; }
+        section:nth-child(5) { animation-delay: 0.7s; }
+
+        .section-title {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* Follow Links */
+        .follow-links {
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            flex-wrap: wrap;
+        }
+
+        .follow-link {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: color 0.3s ease;
+        }
+
+        .follow-link:hover {
+            color: var(--color-gold);
+        }
+
+        .follow-link svg {
+            width: 18px;
+            height: 18px;
+            opacity: 0.8;
+        }
+
+        /* Give Section */
+        .give-section {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(232, 200, 154, 0.2);
+            margin-top: 48px;
+        }
+
+        .give-intro {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-text-primary);
+            margin-bottom: 24px;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 500;
+            letter-spacing: 0.03em;
+            padding: 12px 20px;
+            border-radius: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .share-btn.whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+        }
+
+        .share-btn.email {
+            background: var(--color-gold);
+            color: #1A1818;
+        }
+
+        .share-btn.email:hover {
+            background: var(--color-gold-soft);
+            transform: translateY(-2px);
+        }
+
+        .share-btn.copy-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-text-primary);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .share-btn.copy-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .share-btn.copy-link.copied {
+            background: rgba(37, 211, 102, 0.2);
+            border-color: rgba(37, 211, 102, 0.4);
+            color: #25D366;
+        }
+
+        .give-subtext {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-style: italic;
+            color: var(--color-text-muted);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 0 60px;
+            text-align: center;
+            border-top: 1px solid rgba(232, 200, 154, 0.2);
+            margin-top: 32px;
+        }
+
+        .closing-line {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--color-text-primary);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .footer-mark {
+            margin-top: 24px;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            color: var(--color-gold);
+        }
+
+        /* ============================================
+           MOBILE RESPONSIVE
+           ============================================ */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(35, 45, 58, 0.98);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                flex-direction: column;
+                padding: 20px;
+                gap: 16px;
+                border-top: 1px solid var(--color-border);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            header {
+                padding: 70px 0 16px;
+            }
+
+            .logo-mark {
+                width: 36px;
+                height: 36px;
+                margin-bottom: 12px;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+                letter-spacing: 0.06em;
+                margin-bottom: 8px;
+            }
+
+            .tagline {
+                font-size: 0.95rem;
+            }
+
+            main {
+                padding: 16px 0 48px;
+            }
+
+            .hero-text {
+                margin-bottom: 20px;
+            }
+
+            .headline {
+                font-size: 1.4rem;
+            }
+
+            .subtext-emphasis {
+                font-size: 1.1rem;
+            }
+
+            .subtext {
+                font-size: 1rem;
+            }
+
+            .divider {
+                margin: 16px 0;
+            }
+
+            .divider-ornament {
+                font-size: 10px;
+                letter-spacing: 6px;
+            }
+
+            .featured h2 {
+                font-size: 1.4rem;
+            }
+
+            .featured p {
+                font-size: 0.95rem;
+            }
+
+            .btn-start {
+                width: 100%;
+                max-width: none;
+                padding: 16px 24px;
+            }
+
+            .library-cta {
+                margin: 16px 0 40px;
+            }
+
+            .follow-links {
+                gap: 20px;
+            }
+
+            .give-section {
+                padding: 32px 0;
+            }
+
+            .give-intro {
+                font-size: 0.95rem;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 100%;
+                max-width: 260px;
+                justify-content: center;
+            }
+
+            footer {
+                padding: 40px 0 48px;
+            }
+
+            .closing-line {
+                font-size: 1rem;
+            }
+        }
+
+        /* Desktop enhancements */
+        @media (min-width: 769px) {
+            nav {
+                padding: 20px 40px;
+            }
+
+            .nav-logo svg {
+                width: 36px;
+                height: 36px;
+            }
+
+            .nav-logo-text {
+                font-size: 1.3rem;
+            }
+
+            .nav-links {
+                gap: 40px;
+            }
+
+            header {
+                padding: 140px 0 48px;
+            }
+
+            .logo-mark {
+                width: 64px;
+                height: 64px;
+                margin-bottom: 40px;
+            }
+
+            .hero-text {
+                margin-bottom: 72px;
+            }
+
+            .headline {
+                margin-bottom: 28px;
+            }
+
+            .subtext-emphasis {
+                margin-bottom: 20px;
+            }
+
+            .divider {
+                margin: 60px 0;
+            }
+
+            .featured {
+                margin-bottom: 48px;
+            }
+
+            .featured h2 {
+                font-size: 1.9rem;
+            }
+
+            .btn-start {
+                width: auto;
+            }
+
+            .library-cta {
+                margin: 48px 0 72px;
+            }
+
+            .give-section {
+                padding: 56px 0;
+            }
+
+            footer {
+                padding: 80px 0 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav id="navbar">
+        <a href="/" class="nav-logo">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="#D4B896" stroke-width="1" fill="none" opacity="0.5"/>
+                <path d="M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z" stroke="#D4826A" stroke-width="1" fill="none"/>
+                <circle cx="24" cy="26" r="4" stroke="#D4B896" stroke-width="1.5" fill="#D4B896" fill-opacity="0.3"/>
+            </svg>
+            <span class="nav-logo-text">Uma Mythos</span>
+        </a>
+
+        <div class="nav-links" id="navLinks">
+            <a href="library.html" class="nav-link">Stories</a>
+        </div>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+        </button>
+    </nav>
+
+    <!-- Animated Twilight Background -->
+    <div class="animated-bg">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+            <defs>
+                <linearGradient id="twilightSky" x1="0%" y1="0%" x2="0%" y2="100%">
+                    <stop offset="0%" style="stop-color:#2D3A4A"/>
+                    <stop offset="25%" style="stop-color:#4A5568"/>
+                    <stop offset="50%" style="stop-color:#8B7355"/>
+                    <stop offset="75%" style="stop-color:#D4A574"/>
+                    <stop offset="100%" style="stop-color:#E8C8A0"/>
+                </linearGradient>
+
+                <radialGradient id="starGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#FFFEF0;stop-opacity:1"/>
+                    <stop offset="30%" style="stop-color:#FFF8E0;stop-opacity:0.6"/>
+                    <stop offset="100%" style="stop-color:#FFF8E0;stop-opacity:0"/>
+                </radialGradient>
+
+                <radialGradient id="horizonGlow" cx="50%" cy="100%" r="80%">
+                    <stop offset="0%" style="stop-color:#E8B060;stop-opacity:0.4"/>
+                    <stop offset="100%" style="stop-color:#E8B060;stop-opacity:0"/>
+                </radialGradient>
+
+                <radialGradient id="firstStar" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#FFFFFF;stop-opacity:1"/>
+                    <stop offset="20%" style="stop-color:#FFFEF0;stop-opacity:0.8"/>
+                    <stop offset="50%" style="stop-color:#FFF8D0;stop-opacity:0.3"/>
+                    <stop offset="100%" style="stop-color:#FFF8D0;stop-opacity:0"/>
+                </radialGradient>
+            </defs>
+
+            <rect width="100%" height="100%" fill="url(#twilightSky)"/>
+            <ellipse cx="960" cy="1080" rx="1200" ry="500" fill="url(#horizonGlow)"/>
+
+            <!-- The first star of evening -->
+            <g transform="translate(1500, 180)">
+                <circle r="25" fill="url(#firstStar)">
+                    <animate attributeName="opacity" values="0.7;1;0.7" dur="4s" repeatCount="indefinite"/>
+                </circle>
+                <circle r="3" fill="#FFFFFF">
+                    <animate attributeName="opacity" values="0.9;1;0.9" dur="2s" repeatCount="indefinite"/>
+                </circle>
+            </g>
+
+            <!-- Stars appearing -->
+            <g>
+                <g transform="translate(400, 150)">
+                    <circle r="12" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.8;0.8" dur="10s" repeatCount="indefinite"/>
+                    </circle>
+                    <circle r="2" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;1;1" dur="10s" repeatCount="indefinite"/>
+                    </circle>
+                </g>
+
+                <g transform="translate(800, 100)">
+                    <circle r="10" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.7;0.7" dur="12s" repeatCount="indefinite" begin="2s"/>
+                    </circle>
+                    <circle r="1.5" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;1;1" dur="12s" repeatCount="indefinite" begin="2s"/>
+                    </circle>
+                </g>
+
+                <g transform="translate(1200, 200)">
+                    <circle r="11" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.75;0.75" dur="14s" repeatCount="indefinite" begin="1s"/>
+                    </circle>
+                    <circle r="1.8" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;1;1" dur="14s" repeatCount="indefinite" begin="1s"/>
+                    </circle>
+                </g>
+
+                <g transform="translate(300, 280)">
+                    <circle r="9" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.65;0.65" dur="16s" repeatCount="indefinite" begin="4s"/>
+                    </circle>
+                    <circle r="1.5" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;0.9;0.9" dur="16s" repeatCount="indefinite" begin="4s"/>
+                    </circle>
+                </g>
+
+                <g transform="translate(1700, 120)">
+                    <circle r="8" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.6;0.6" dur="15s" repeatCount="indefinite" begin="3s"/>
+                    </circle>
+                    <circle r="1.2" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;0.85;0.85" dur="15s" repeatCount="indefinite" begin="3s"/>
+                    </circle>
+                </g>
+
+                <g transform="translate(600, 220)">
+                    <circle r="6" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.5;0.5" dur="18s" repeatCount="indefinite" begin="5s"/>
+                    </circle>
+                    <circle r="1" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;0.8;0.8" dur="18s" repeatCount="indefinite" begin="5s"/>
+                    </circle>
+                </g>
+
+                <g transform="translate(1000, 300)">
+                    <circle r="7" fill="url(#starGlow)">
+                        <animate attributeName="opacity" values="0;0.55;0.55" dur="20s" repeatCount="indefinite" begin="6s"/>
+                    </circle>
+                    <circle r="1.2" fill="#FFFEF0">
+                        <animate attributeName="opacity" values="0;0.85;0.85" dur="20s" repeatCount="indefinite" begin="6s"/>
+                    </circle>
+                </g>
+
+                <!-- Small dim stars -->
+                <circle cx="500" cy="350" r="1" fill="#FFFEF0">
+                    <animate attributeName="opacity" values="0;0.4;0.4" dur="22s" repeatCount="indefinite" begin="10s"/>
+                </circle>
+                <circle cx="900" cy="380" r="1" fill="#FFFEF0">
+                    <animate attributeName="opacity" values="0;0.35;0.35" dur="24s" repeatCount="indefinite" begin="12s"/>
+                </circle>
+                <circle cx="1400" cy="350" r="1" fill="#FFFEF0">
+                    <animate attributeName="opacity" values="0;0.4;0.4" dur="21s" repeatCount="indefinite" begin="11s"/>
+                </circle>
+            </g>
+
+            <!-- Twinkling -->
+            <g>
+                <circle cx="1500" cy="180" r="2" fill="#FFFFFF">
+                    <animate attributeName="opacity" values="1;0.6;1" dur="3s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="400" cy="150" r="1.5" fill="#FFFFFF">
+                    <animate attributeName="opacity" values="0.8;0.5;0.8" dur="4s" repeatCount="indefinite" begin="1s"/>
+                </circle>
+                <circle cx="1200" cy="200" r="1.5" fill="#FFFFFF">
+                    <animate attributeName="opacity" values="0.85;0.55;0.85" dur="3.5s" repeatCount="indefinite" begin="0.5s"/>
+                </circle>
+            </g>
+
+            <!-- Subtle silhouette at bottom -->
+            <path d="M0 1000 
+                     Q100 980, 150 990 
+                     Q200 985, 250 995 
+                     Q350 975, 400 985
+                     Q500 970, 600 980
+                     Q700 975, 800 985
+                     Q900 970, 1000 980
+                     Q1100 975, 1200 985
+                     Q1300 970, 1400 982
+                     Q1500 975, 1600 985
+                     Q1700 978, 1800 988
+                     Q1850 980, 1920 985
+                     L1920 1080 L0 1080 Z" 
+                  fill="#2A2A35" opacity="0.3"/>
+        </svg>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="logo-mark">
+                <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="24" cy="24" r="22" stroke="#D4B896" stroke-width="1" fill="none" opacity="0.5"/>
+                    <path d="M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z" stroke="#D4826A" stroke-width="1" fill="none"/>
+                    <circle cx="24" cy="26" r="4" stroke="#D4B896" stroke-width="1.5" fill="#D4B896" fill-opacity="0.3"/>
+                </svg>
+            </div>
+            <h1>Uma Mythos</h1>
+            <p class="tagline">Ancient stories, illustrated and retold</p>
+        </header>
+
+        <main>
+            <!-- Hero text -->
+            <div class="hero-text">
+                <div class="invitation-label">Personal Invitation</div>
+                <h2 class="headline">Someone thought you'd love stories from Uma Mythos.</h2>
+                <p class="subtext-emphasis">We think they were right.</p>
+                <p class="subtext">Stories travel on their own — passed from one person to the next. If you're here, a story found you.</p>
+            </div>
+
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span class="divider-ornament">✦ ✦ ✦</span>
+                <span class="divider-line"></span>
+            </div>
+
+            <!-- Featured story - PRIMARY CTA -->
+            <div class="featured">
+                <div class="featured-label">✦ Begin Here</div>
+                <h2>The Formless King</h2>
+                <p>When Prince Devagupta's father is poisoned, he must navigate treachery and discover what it truly means to rule.</p>
+                <a href="stories/the-formless-king/episode-1.html" class="btn-start">
+                    Read Episode 1
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <!-- Secondary CTA -->
+            <div class="library-cta">
+                <a href="library.html" class="btn-library">
+                    Or browse all stories
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+
+            <section>
+                <h3 class="section-title">Follow Along</h3>
+                <div class="follow-links">
+                    <a href="#" class="follow-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        WhatsApp
+                    </a>
+                    <a href="#" class="follow-link">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                        Instagram
+                    </a>
+                </div>
+            </section>
+
+            <section class="give-section" id="give">
+                <p class="give-intro">These stories have always been free — told around fires, under trees, between generations. If one has stayed with you, you can help it reach the next listener.</p>
+                
+                <div class="share-buttons">
+                    <a href="https://wa.me/?text=I%20thought%20you%27d%20love%20these%20ancient%20Indian%20stories%20%E2%80%94%20beautifully%20illustrated%20and%20retold.%20https%3A%2F%2Fumamythos.com" target="_blank" class="share-btn whatsapp">
+                        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Share on WhatsApp
+                    </a>
+                    <button class="share-btn copy-link" onclick="copyLink()">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                        <span id="copyText">Copy Link</span>
+                    </button>
+                </div>
+
+                <p class="give-subtext">Keep the stories traveling</p>
+            </section>
+        </main>
+
+        <footer>
+            <p class="closing-line">Stories choose who carries them.</p>
+            <p class="footer-mark">Uma Mythos</p>
+        </footer>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Copy link functionality
+        function copyLink() {
+            const url = 'https://umamythos.com';
+            const text = "I thought you'd love these ancient Indian stories — beautifully illustrated and retold. " + url;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-link');
+                const copyText = document.getElementById('copyText');
+                
