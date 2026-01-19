@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Copyright | Uma Mythos</title>
+    <meta name="description" content="Terms of use and copyright information for Uma Mythos.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22' stroke='%23D4B896' stroke-width='2' fill='%232D3A4A'/%3E%3Cpath d='M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z' stroke='%23D4826A' stroke-width='2' fill='none'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23D4B896'/%3E%3C/svg%3E">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FAF7F2;
+            --color-warm-white: #FFFCF7;
+            --color-ink: #2C2416;
+            --color-ink-soft: #4A4238;
+            --color-ink-muted: #8B8279;
+            --color-terracotta: #A04030;
+            --color-gold: #C4A86B;
+            --color-gold-soft: #D4BC8A;
+            --color-border: #E8E2D9;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Spectral', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 1.85;
+            color: var(--color-ink);
+            background-color: var(--color-cream);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 16px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(250, 247, 242, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--color-ink);
+        }
+
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--color-ink-soft);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-terracotta);
+        }
+
+        /* Main content */
+        main {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 60px 24px 80px;
+        }
+
+        .page-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .page-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 400;
+            color: var(--color-ink);
+            margin-bottom: 12px;
+            letter-spacing: 0.06em;
+        }
+
+        .page-subtitle {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-ink-muted);
+        }
+
+        /* Content sections */
+        .content-section {
+            margin-bottom: 48px;
+        }
+
+        .content-section h2 {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: var(--color-ink);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .content-section p {
+            color: var(--color-ink-soft);
+            margin-bottom: 16px;
+        }
+
+        .content-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: var(--color-warm-white);
+            border: 1px solid var(--color-border);
+            border-left: 3px solid var(--color-gold);
+            padding: 24px 28px;
+            border-radius: 2px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            font-size: 1.05rem;
+            color: var(--color-ink);
+            margin: 0;
+        }
+
+        /* Contact */
+        .contact-email {
+            color: var(--color-terracotta);
+            text-decoration: none;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 48px 24px;
+            border-top: 1px solid var(--color-border);
+            margin-top: 40px;
+        }
+
+        .footer-text {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-ink-muted);
+        }
+
+        .footer-mark {
+            margin-top: 16px;
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: var(--color-ink-soft);
+        }
+
+        .footer-legal {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.03em;
+        }
+
+        .footer-url {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.03em;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav {
+                padding: 12px 16px;
+            }
+
+            main {
+                padding: 40px 16px 60px;
+            }
+
+            .highlight-box {
+                padding: 20px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="nav-logo">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="#2C2416" stroke-width="1" fill="none" opacity="0.4"/>
+                <path d="M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z" stroke="#A04030" stroke-width="1" fill="none"/>
+                <circle cx="24" cy="26" r="4" stroke="#C4A86B" stroke-width="1.5" fill="#C4A86B" fill-opacity="0.3"/>
+            </svg>
+            <span class="nav-logo-text">Uma Mythos</span>
+        </a>
+        <a href="index.html" class="nav-link">Home</a>
+    </nav>
+
+    <main>
+        <header class="page-header">
+            <h1 class="page-title">Terms & Copyright</h1>
+            <p class="page-subtitle">How these stories are meant to travel</p>
+        </header>
+
+        <section class="content-section">
+            <h2>Our Philosophy</h2>
+            <p>These stories have always been free — told around fires, under trees, between generations. Uma Mythos exists to continue that tradition in a new form. We believe stories grow when they travel.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Copyright</h2>
+            <p>All stories, illustrations, and content on Uma Mythos are original works © 2026 Uma Mythos. The written narratives, visual artwork, and overall presentation are protected by copyright.</p>
+            
+            <div class="highlight-box">
+                <p>You're welcome to share these stories freely — that's what they're for. If you share, please credit Uma Mythos and link back to <strong>umamythos.com</strong></p>
+            </div>
+        </section>
+
+        <section class="content-section">
+            <h2>What You Can Do</h2>
+            <p>Share links to stories with friends, family, or anyone who might enjoy them. Post about Uma Mythos on social media. Recommend stories to others. Read them aloud to children. Use the share buttons we've provided. Quote brief passages with attribution.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>What We Ask You Not To Do</h2>
+            <p>Please don't reproduce entire stories or illustrations without permission. Don't remove our branding or attribution. Don't use our content for commercial purposes. Don't claim the work as your own.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>For Educators & Non-Commercial Use</h2>
+            <p>If you'd like to use Uma Mythos stories in a classroom, library, or other non-commercial educational setting, we're generally happy to grant permission. Please reach out and let us know how you'd like to use the stories.</p>
+        </section>
+
+        <section class="content-section">
+            <h2>Contact</h2>
+            <p>Questions about using our content? Want to discuss a collaboration? Just want to say hello? We'd love to hear from you.</p>
+            <p>Email: <a href="mailto:hello@umamythos.com" class="contact-email">hello@umamythos.com</a></p>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">Stories choose who carries them.</p>
+        <p class="footer-mark">Uma Mythos</p>
+        <div class="footer-legal">
+            <span class="footer-copyright">© 2026 Uma Mythos</span>
+            <span class="footer-url">umamythos.com</span>
+        </div>
+    </footer>
+</body>
+</html>
