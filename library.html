@@ -241,6 +241,44 @@
             color: var(--color-ink-soft);
         }
 
+        .footer-legal {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--color-border);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.03em;
+        }
+
+        .footer-url {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.03em;
+        }
+
+        .footer-terms {
+            font-family: var(--font-body);
+            font-size: 0.75rem;
+            color: var(--color-ink-muted);
+            letter-spacing: 0.03em;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-terms:hover {
+            color: var(--color-terracotta);
+        }
+
         /* Responsive */
         @media (max-width: 600px) {
             nav {
@@ -304,6 +342,11 @@
     <footer>
         <p class="footer-text">Stories choose who carries them.</p>
         <p class="footer-mark">Uma Mythos</p>
+        <div class="footer-legal">
+            <span class="footer-copyright">© 2026 Uma Mythos</span>
+            <span class="footer-url">umamythos.com</span>
+            <a href="terms.html" class="footer-terms">Terms</a>
+        </div>
     </footer>
 </body>
 </html>
