@@ -246,6 +246,63 @@
             transform: translateX(4px);
         }
 
+        /* Episode info below CTA */
+        .episode-info {
+            margin-top: 28px;
+            text-align: center;
+        }
+
+        .episode-count {
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--color-gold);
+            letter-spacing: 0.05em;
+            margin-bottom: 12px;
+        }
+
+        .latest-episode {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s ease;
+        }
+
+        .latest-episode:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: var(--color-gold);
+            color: var(--color-gold);
+        }
+
+        .latest-episode svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .latest-episode:hover svg {
+            transform: translateX(3px);
+        }
+
+        .new-badge {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            background: var(--color-terracotta);
+            padding: 2px 8px;
+            border-radius: 10px;
+            margin-left: 4px;
+        }
+
         /* Decorative divider */
         .divider {
             display: flex;
@@ -973,7 +1030,18 @@
                         <path d="M5 12h14M12 5l7 7-7 7"/>
                     </svg>
                 </a>
-            </div>
+                
+                <!-- Episode info for returning readers -->
+                <div class="episode-info">
+                    <p class="episode-count">The Formless King • 2 episodes available</p>
+                    <a href="stories/the-formless-king/episode-2.html" class="latest-episode">
+                        Latest: Episode 2 — The Perfect Plan
+                        <span class="new-badge">New</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                </div>
             </div>
 
             <div class="divider">
