@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Formless King — Episode 2: The Perfect Plan | Uma Mythos</title>
+    <meta name="description" content="Devagupta uncovers the conspiracy behind his father's murder and crafts a perfect plan for justice.">
+    
+    <!-- Open Graph for nice sharing previews -->
+    <meta property="og:title" content="The Formless King — Episode 2: The Perfect Plan">
+    <meta property="og:description" content="I thought you'd love this story from Uma Mythos — ancient Indian stories, illustrated.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://umamythos.com/stories/the-formless-king/episode-2.html">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22' stroke='%23D4B896' stroke-width='2' fill='%232D3A4A'/%3E%3Cpath d='M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z' stroke='%23D4826A' stroke-width='2' fill='none'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23D4B896'/%3E%3C/svg%3E">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNFWKKVZ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PDNFWKKVZ7');
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-cream: #FAF7F2;
+            --color-warm-white: #FFFCF7;
+            --color-ink: #2C2416;
+            --color-ink-soft: #4A4238;
+            --color-ink-muted: #8B8279;
+            --color-terracotta: #A04030;
+            --color-gold: #C4A86B;
+            --color-gold-soft: #D4BC8A;
+            --color-border: #E8E2D9;
+            --font-display: 'Cormorant Garamond', Georgia, serif;
+            --font-body: 'Spectral', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 300;
+            background: #1a1a1a;
+            color: var(--color-cream);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--color-terracotta);
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            padding: 16px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(26, 26, 26, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-logo-text {
+            font-family: var(--font-display);
+            font-size: 1.1rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            color: var(--color-cream);
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-link {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-cream);
+        }
+
+        /* Main content */
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 0 40px;
+        }
+
+        /* Story header */
+        .story-header {
+            text-align: center;
+            padding: 40px 20px 32px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 0;
+        }
+
+        .story-series {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--color-terracotta);
+            margin-bottom: 12px;
+        }
+
+        .story-title {
+            font-family: var(--font-display);
+            font-size: clamp(1.8rem, 5vw, 2.4rem);
+            font-weight: 400;
+            color: var(--color-cream);
+            margin-bottom: 12px;
+            letter-spacing: 0.02em;
+        }
+
+        .story-episode {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--color-gold);
+            margin-bottom: 8px;
+        }
+
+        .story-meta {
+            font-size: 0.85rem;
+            color: var(--color-ink-muted);
+        }
+
+        /* Comic pages - vertical scroll */
+        .comic-pages {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .comic-page {
+            width: 100%;
+            position: relative;
+        }
+
+        .comic-page img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Page marker for mobile */
+        .page-marker {
+            display: none;
+            text-align: center;
+            padding: 12px;
+            font-family: var(--font-display);
+            font-size: 0.8rem;
+            color: var(--color-ink-muted);
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        /* Episode navigation */
+        .episode-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 32px 24px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .episode-nav-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--color-gold);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .episode-nav-btn:hover {
+            color: var(--color-cream);
+        }
+
+        .episode-nav-btn.disabled {
+            color: var(--color-ink-muted);
+            pointer-events: none;
+            opacity: 0.5;
+        }
+
+        .episode-nav-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .episode-indicator {
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            color: var(--color-ink-muted);
+        }
+
+        /* Share section */
+        .share-section {
+            padding: 48px 24px;
+            text-align: center;
+        }
+
+        .share-intro {
+            font-family: var(--font-body);
+            font-size: 1rem;
+            color: var(--color-ink-soft);
+            max-width: 400px;
+            margin: 0 auto 24px;
+            line-height: 1.8;
+        }
+
+        .share-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .share-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-display);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 12px 20px;
+            border-radius: 24px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .share-btn svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        .share-btn.whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .share-btn.whatsapp:hover {
+            background: #20bd5a;
+            transform: translateY(-2px);
+        }
+
+        .share-btn.copy-link {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--color-cream);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .share-btn.copy-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .share-btn.copy-link.copied {
+            background: rgba(37, 211, 102, 0.2);
+            border-color: rgba(37, 211, 102, 0.4);
+            color: #25D366;
+        }
+
+        /* More stories link */
+        .more-stories {
+            text-align: center;
+            padding: 32px 24px 48px;
+        }
+
+        .more-stories h3 {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--color-ink-muted);
+            margin-bottom: 16px;
+        }
+
+        .btn-library {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--color-gold);
+            text-decoration: none;
+            padding: 12px 24px;
+            border: 1px solid var(--color-gold);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn-library:hover {
+            background: var(--color-gold);
+            color: #1a1a1a;
+        }
+
+        .btn-library svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 32px 24px 48px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-text {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-ink-muted);
+            margin-bottom: 12px;
+        }
+
+        .footer-mark {
+            font-family: var(--font-display);
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            color: var(--color-ink-soft);
+        }
+
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 48px;
+            height: 48px;
+            background: var(--color-gold);
+            color: #1a1a1a;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            z-index: 90;
+        }
+
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+
+        .scroll-top svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            nav {
+                padding: 12px 16px;
+            }
+
+            .story-header {
+                padding: 32px 16px 24px;
+            }
+
+            .comic-pages {
+                gap: 0;
+            }
+
+            .page-marker {
+                display: block;
+            }
+
+            .episode-nav {
+                padding: 24px 16px;
+            }
+
+            .share-section {
+                padding: 32px 16px;
+            }
+
+            .share-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .share-btn {
+                width: 100%;
+                max-width: 260px;
+                justify-content: center;
+            }
+        }
+
+        /* Desktop */
+        @media (min-width: 601px) {
+            .comic-pages {
+                gap: 8px;
+                padding: 8px;
+            }
+
+            .comic-page {
+                box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="/index.html" class="nav-logo">
+            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="24" cy="24" r="22" stroke="#C4A86B" stroke-width="1" fill="none" opacity="0.4"/>
+                <path d="M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z" stroke="#A04030" stroke-width="1" fill="none"/>
+                <circle cx="24" cy="26" r="4" stroke="#C4A86B" stroke-width="1.5" fill="#C4A86B" fill-opacity="0.3"/>
+            </svg>
+            <span class="nav-logo-text">Uma Mythos</span>
+        </a>
+        <div class="nav-links">
+            <a href="/library.html" class="nav-link">All Stories</a>
+        </div>
+    </nav>
+
+    <main>
+        <header class="story-header">
+            <p class="story-series">The Formless King</p>
+            <h1 class="story-title">The Perfect Plan</h1>
+            <p class="story-episode">Episode 2 of 8</p>
+            <p class="story-meta">5 min read</p>
+        </header>
+
+        <div class="comic-pages">
+            <div class="comic-page">
+                <img src="images/ep2-page-01.png" alt="The Formless King - Episode 2 - Page 1">
+            </div>
+            <div class="page-marker">Page 1 of 4</div>
+            
+            <div class="comic-page">
+                <img src="images/ep2-page-02.png" alt="The Formless King - Episode 2 - Page 2">
+            </div>
+            <div class="page-marker">Page 2 of 4</div>
+            
+            <div class="comic-page">
+                <img src="images/ep2-page-03.png" alt="The Formless King - Episode 2 - Page 3">
+            </div>
+            <div class="page-marker">Page 3 of 4</div>
+            
+            <div class="comic-page">
+                <img src="images/ep2-page-04.png" alt="The Formless King - Episode 2 - Page 4">
+            </div>
+            <div class="page-marker">Page 4 of 4</div>
+        </div>
+
+        <nav class="episode-nav">
+            <a href="episode-1.html" class="episode-nav-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Previous
+            </a>
+            <span class="episode-indicator">2 / 8</span>
+            <a href="episode-3.html" class="episode-nav-btn disabled">
+                Next
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </nav>
+
+        <section class="share-section">
+            <p class="share-intro">These stories have always been free — told around fires, under trees, between generations. If this one stayed with you, help it find the next listener.</p>
+            
+            <div class="share-buttons">
+                <a href="https://wa.me/?text=I%20loved%20this%20story%20from%20Uma%20Mythos%20%E2%80%94%20The%20Formless%20King.%20https%3A%2F%2Fumamythos.com%2Fstories%2Fthe-formless-king%2Fepisode-2.html" target="_blank" class="share-btn whatsapp">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    Share on WhatsApp
+                </a>
+                <button class="share-btn copy-link" onclick="copyLink()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+                    <span id="copyText">Copy Link</span>
+                </button>
+            </div>
+        </section>
+
+        <section class="more-stories">
+            <h3>Explore more stories</h3>
+            <a href="/library.html" class="btn-library">
+                Enter the Story Library
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </section>
+    </main>
+
+    <footer>
+        <p class="footer-text">Stories choose who carries them.</p>
+        <p class="footer-mark">Uma Mythos</p>
+    </footer>
+
+    <!-- Scroll to top button -->
+    <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 19V5M5 12l7-7 7 7"/>
+        </svg>
+    </button>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+            
+            // Show/hide scroll to top button
+            const scrollTopBtn = document.getElementById('scrollTop');
+            if (scrollTop > 500) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function copyLink() {
+            const url = 'https://umamythos.com/stories/the-formless-king/episode-2.html';
+            const text = "I loved this story from Uma Mythos — The Formless King. " + url;
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.querySelector('.copy-link');
+                const copyText = document.getElementById('copyText');
+                
+                btn.classList.add('copied');
+                copyText.textContent = 'Copied!';
+                
+                setTimeout(() => {
+                    btn.classList.remove('copied');
+                    copyText.textContent = 'Copy Link';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+</html>
