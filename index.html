@@ -248,42 +248,42 @@
 
         /* Episode info below CTA */
         .episode-info {
-            margin-top: 28px;
+            margin-top: 32px;
             text-align: center;
         }
 
         .episode-count {
             font-family: var(--font-display);
             font-size: 0.95rem;
-            color: var(--color-gold);
+            color: var(--color-text-secondary);
             letter-spacing: 0.05em;
-            margin-bottom: 12px;
+            margin-bottom: 16px;
         }
 
         .latest-episode {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            font-weight: 500;
+            color: #1A1818;
             text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 20px;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            padding: 14px 24px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--color-terracotta-soft), var(--color-terracotta));
+            box-shadow: 0 4px 20px rgba(232, 150, 122, 0.4);
             transition: all 0.3s ease;
         }
 
         .latest-episode:hover {
-            background: rgba(255, 255, 255, 0.15);
-            border-color: var(--color-gold);
-            color: var(--color-gold);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(232, 150, 122, 0.5);
         }
 
         .latest-episode svg {
-            width: 14px;
-            height: 14px;
+            width: 16px;
+            height: 16px;
             transition: transform 0.3s ease;
         }
 
@@ -292,15 +292,14 @@
         }
 
         .new-badge {
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
+            font-size: 0.65rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: #1a1a1a;
-            background: var(--color-terracotta);
-            padding: 2px 8px;
+            color: #1A1818;
+            background: var(--color-gold);
+            padding: 3px 8px;
             border-radius: 10px;
-            margin-left: 4px;
         }
 
         /* Decorative divider */
@@ -1033,10 +1032,10 @@
                 
                 <!-- Episode info for returning readers -->
                 <div class="episode-info">
-                    <p class="episode-count">The Formless King • 2 episodes available</p>
+                    <p class="episode-count">The Formless King • 2 of 4 episodes</p>
                     <a href="stories/the-formless-king/episode-2.html" class="latest-episode">
-                        Latest: Episode 2 — The Perfect Plan
                         <span class="new-badge">New</span>
+                        Episode 2: The Perfect Plan
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M5 12h14M12 5l7 7-7 7"/>
                         </svg>
