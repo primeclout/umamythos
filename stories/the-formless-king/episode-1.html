@@ -77,7 +77,7 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 12px 16px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -90,60 +90,84 @@
         .nav-logo {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             text-decoration: none;
         }
 
         .nav-logo svg {
-            width: 24px;
-            height: 24px;
+            width: 32px;
+            height: 32px;
         }
 
         .nav-logo-text {
             font-family: var(--font-display);
-            font-size: 1rem;
+            font-size: 1.25rem;
             font-weight: 500;
             letter-spacing: 0.06em;
             color: var(--color-ink);
         }
 
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+
         .nav-link {
             font-family: var(--font-display);
-            font-size: 0.85rem;
+            font-size: 1.1rem;
+            font-weight: 500;
             color: var(--color-ink-soft);
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--color-terracotta);
+        }
+
+        .nav-link-home {
+            font-family: var(--font-display);
+            font-size: 1rem;
+            color: var(--color-ink-muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link-home:hover {
+            color: var(--color-ink);
         }
 
         /* Story header */
         .story-header {
             background: var(--color-cream);
             text-align: center;
-            padding: 5px 16px;
+            padding: 24px 20px 16px;
         }
 
         .story-series {
             font-family: var(--font-display);
-            font-size: 0.7rem;
+            font-size: 1.1rem;
             font-weight: 600;
             letter-spacing: 0.15em;
             text-transform: uppercase;
             color: var(--color-terracotta);
-            margin-bottom: 4px;
+            margin-bottom: 8px;
         }
 
         .story-title {
             font-family: var(--font-display);
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             font-weight: 400;
             color: var(--color-ink);
-            margin-bottom: 2px;
+            margin-bottom: 8px;
             letter-spacing: 0.02em;
-            line-height: 1;
+            line-height: 1.2;
         }
 
         .story-episode {
             font-family: var(--font-display);
-            font-size: 0.85rem;
+            font-size: 1.3rem;
             font-style: italic;
             color: var(--color-ink-muted);
         }
@@ -151,7 +175,7 @@
         /* Comic pages - vertical scroll */
         .comic-scroll {
             background: var(--color-cream);
-            padding: 0;
+            padding: 16px 0;
         }
 
         .comic-scroll img {
@@ -171,10 +195,10 @@
             background: rgba(44, 36, 22, 0.08);
             color: var(--color-ink-muted);
             font-family: var(--font-display);
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             letter-spacing: 0.1em;
             text-align: center;
-            padding: 8px;
+            padding: 10px;
         }
 
         /* Bottom sections */
@@ -187,22 +211,27 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 16px;
+            padding: 24px 20px;
             border-bottom: 1px solid var(--color-border);
-            gap: 8px;
+            gap: 12px;
             max-width: 800px;
             margin: 0 auto;
+        }
+
+        .episode-nav-top {
+            border-top: 1px solid var(--color-border);
+            padding: 16px 20px;
         }
 
         .episode-nav-btn {
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-family: var(--font-display);
-            font-size: 0.85rem;
+            font-size: 1rem;
             color: var(--color-ink-soft);
             text-decoration: none;
-            padding: 10px 18px;
+            padding: 12px 20px;
             border-radius: 24px;
             background: var(--color-warm-white);
             border: 1px solid var(--color-border);
@@ -221,47 +250,48 @@
         }
 
         .episode-nav-btn svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
         }
 
         .episode-indicator {
             font-family: var(--font-display);
-            font-size: 0.8rem;
+            font-size: 1rem;
             color: var(--color-ink-muted);
-            letter-spacing: 0.1em;
         }
 
         /* Share section */
         .share-section {
             text-align: center;
-            padding: 32px 16px;
+            padding: 40px 20px;
             border-bottom: 1px solid var(--color-border);
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .share-intro {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
+            font-family: var(--font-body);
+            font-size: 1.1rem;
             color: var(--color-ink-soft);
-            margin-bottom: 16px;
+            margin-bottom: 20px;
         }
 
         .share-buttons {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
         .share-btn {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
             font-family: var(--font-display);
-            font-size: 0.8rem;
+            font-size: 1rem;
             font-weight: 500;
-            padding: 10px 16px;
-            border-radius: 20px;
+            padding: 12px 24px;
+            border-radius: 24px;
             text-decoration: none;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -269,8 +299,8 @@
         }
 
         .share-btn svg {
-            width: 16px;
-            height: 16px;
+            width: 20px;
+            height: 20px;
         }
 
         .share-btn.whatsapp {
@@ -280,91 +310,84 @@
 
         .share-btn.whatsapp:hover {
             background: #20bd5a;
-        }
-
-        .share-btn.email {
-            background: var(--color-gold);
-            color: #1A1818;
-        }
-
-        .share-btn.email:hover {
-            background: var(--color-gold-soft);
+            transform: translateY(-2px);
         }
 
         .share-btn.copy-link {
-            background: rgba(44, 36, 22, 0.08);
+            background: var(--color-warm-white);
             color: var(--color-ink-soft);
+            border: 1px solid var(--color-border);
         }
 
         .share-btn.copy-link:hover {
-            background: rgba(44, 36, 22, 0.15);
+            background: var(--color-ink);
+            color: var(--color-cream);
+            border-color: var(--color-ink);
         }
 
-        /* More stories */
+        /* More stories section */
         .more-stories {
             text-align: center;
-            padding: 32px 16px;
+            padding: 40px 20px;
             border-bottom: 1px solid var(--color-border);
         }
 
         .more-stories h3 {
             font-family: var(--font-display);
-            font-size: 0.9rem;
+            font-size: 1.3rem;
             font-weight: 500;
-            color: var(--color-ink-muted);
-            margin-bottom: 12px;
-            letter-spacing: 0.08em;
+            color: var(--color-ink);
+            margin-bottom: 20px;
         }
 
         .btn-library {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             font-family: var(--font-display);
-            font-size: 0.9rem;
-            color: var(--color-terracotta);
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--color-warm-white);
+            background: var(--color-ink);
+            padding: 14px 28px;
+            border-radius: 30px;
             text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid var(--color-terracotta);
-            border-radius: 24px;
             transition: all 0.3s ease;
         }
 
         .btn-library:hover {
             background: var(--color-terracotta);
-            color: var(--color-cream);
+            transform: translateY(-2px);
         }
 
         .btn-library svg {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
         }
 
         /* Footer */
         footer {
             text-align: center;
-            padding: 32px 16px;
+            padding: 40px 20px;
         }
 
         .footer-text {
             font-family: var(--font-display);
-            font-size: 0.9rem;
+            font-size: 1.1rem;
             font-style: italic;
             color: var(--color-ink-muted);
+            margin-bottom: 8px;
         }
 
         .footer-mark {
-            margin-top: 8px;
             font-family: var(--font-display);
-            font-size: 0.75rem;
+            font-size: 0.9rem;
             letter-spacing: 0.15em;
-            color: var(--color-ink-soft);
+            color: var(--color-ink-muted);
+            margin-bottom: 20px;
         }
 
         .footer-legal {
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid var(--color-border);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -374,13 +397,13 @@
 
         .footer-copyright, .footer-url {
             font-family: var(--font-body);
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--color-ink-muted);
         }
 
         .footer-terms {
             font-family: var(--font-body);
-            font-size: 0.7rem;
+            font-size: 0.85rem;
             color: var(--color-ink-muted);
             text-decoration: none;
         }
@@ -432,13 +455,89 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                padding: 14px 16px;
+            }
+
+            .nav-logo svg {
+                width: 28px;
+                height: 28px;
+            }
+
+            .nav-logo-text {
+                font-size: 1.1rem;
+            }
+
+            .nav-links {
+                gap: 16px;
+            }
+
+            .nav-link {
+                font-size: 1rem;
+            }
+
+            .nav-link-home {
+                display: none;
+            }
+
+            .story-header {
+                padding: 20px 16px 12px;
+            }
+
+            .story-series {
+                font-size: 1rem;
+            }
+
+            .story-title {
+                font-size: 2rem;
+            }
+
+            .story-episode {
+                font-size: 1.15rem;
+            }
+
             .comic-scroll img {
                 margin-bottom: 16px;
             }
 
             .page-marker {
-                padding: 6px;
-                font-size: 0.7rem;
+                padding: 8px;
+                font-size: 0.8rem;
+            }
+
+            .episode-nav {
+                padding: 20px 16px;
+            }
+
+            .episode-nav-btn {
+                padding: 10px 16px;
+                font-size: 0.95rem;
+            }
+
+            .share-section {
+                padding: 32px 16px;
+            }
+
+            .share-intro {
+                font-size: 1rem;
+            }
+
+            .share-btn {
+                padding: 10px 20px;
+                font-size: 0.95rem;
+            }
+
+            .more-stories {
+                padding: 32px 16px;
+            }
+
+            .more-stories h3 {
+                font-size: 1.2rem;
+            }
+
+            .btn-library {
+                font-size: 1rem;
+                padding: 12px 24px;
             }
 
             .scroll-top {
@@ -464,7 +563,10 @@
             </svg>
             <span class="nav-logo-text">Uma Mythos</span>
         </a>
-        <a href="../../library.html" class="nav-link">All Stories</a>
+        <div class="nav-links">
+            <a href="../../index.html" class="nav-link-home">Home</a>
+            <a href="../../library.html" class="nav-link">All Stories</a>
+        </div>
     </nav>
 
     <!-- Story header -->
@@ -473,6 +575,23 @@
         <h1 class="story-title">The Poisoned Dawn</h1>
         <p class="story-episode">Episode 1 of 6</p>
     </header>
+
+    <!-- Top episode navigation -->
+    <nav class="episode-nav episode-nav-top">
+        <a href="#" class="episode-nav-btn disabled">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M15 18l-6-6 6-6"/>
+            </svg>
+            Prev
+        </a>
+        <span class="episode-indicator">1 / 6</span>
+        <a href="episode-2.html" class="episode-nav-btn">
+            Next
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 18l6-6-6-6"/>
+            </svg>
+        </a>
+    </nav>
 
     <!-- Comic pages - vertical scroll -->
     <main class="comic-scroll">
@@ -531,7 +650,7 @@
         </section>
 
         <footer>
-            <p class="footer-text">Stories choose who carries them.</p>
+            <p class="footer-text">Stories belong to those who carry them forward.</p>
             <p class="footer-mark">Uma Mythos</p>
             <div class="footer-legal">
                 <span class="footer-copyright">© 2026 Uma Mythos</span>
