@@ -4,18 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Formless King — The Formless King, Episode 4 | Uma Mythos</title>
-    <meta name="description" content="The finale. A year has passed. The prince returns — not with an army, but with something more powerful. He ruled for forty years. History called him Niraakara Raja.">
+    <meta name="description" content="Devagupta begins his transformation, learning to move unseen and strike without being traced.">
     
-    <meta property="og:title" content="The Formless King — Episode 4: The Formless King (Finale)">
+    <meta property="og:title" content="The Formless King — Episode 4: The Formless King">
     <meta property="og:description" content="I thought you'd love this story from Uma Mythos — ancient Indian stories, illustrated.">
     <meta property="og:image" content="images/ep4-page-01.png">
     <meta property="og:url" content="https://umamythos.com/stories/the-formless-king/episode-4">
     <meta property="og:type" content="article">
     
-    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22' stroke='%23D4B896' stroke-width='2' fill='%232D3A4A'/%3E%3Cpath d='M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z' stroke='%23D4826A' stroke-width='2' fill='none'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23D4B896'/%3E%3C/svg%3E">
     
-    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNFWKKVZ7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -42,11 +40,7 @@
             --font-body: 'Spectral', Georgia, serif;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-body);
@@ -58,7 +52,6 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        /* Progress bar */
         .progress-bar {
             position: fixed;
             top: 0;
@@ -70,14 +63,13 @@
             transition: width 0.1s ease;
         }
 
-        /* Navigation - sticky */
-        nav {
+        nav.site-nav {
             position: sticky;
             top: 0;
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 12px 16px;
+            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -87,541 +79,85 @@
             border-bottom: 1px solid var(--color-border);
         }
 
-        .nav-logo {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            text-decoration: none;
-        }
+        .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-logo svg { width: 32px; height: 32px; }
+        .nav-logo-text { font-family: var(--font-display); font-size: 1.25rem; font-weight: 500; letter-spacing: 0.06em; color: var(--color-ink); }
+        .nav-links { display: flex; align-items: center; gap: 24px; }
+        .nav-link { font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--color-ink-soft); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link:hover { color: var(--color-terracotta); }
+        .nav-link-home { font-family: var(--font-display); font-size: 1rem; color: var(--color-ink-muted); text-decoration: none; transition: color 0.3s ease; }
+        .nav-link-home:hover { color: var(--color-ink); }
+        .story-header { background: var(--color-cream); text-align: center; padding: 24px 20px 16px; }
+        .story-series { font-family: var(--font-display); font-size: 1.1rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--color-terracotta); margin-bottom: 8px; }
+        .story-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 400; color: var(--color-ink); margin-bottom: 8px; letter-spacing: 0.02em; line-height: 1.2; }
+        .story-episode { font-family: var(--font-display); font-size: 1.3rem; font-style: italic; color: var(--color-ink-muted); }
+        .comic-scroll { background: var(--color-cream); padding: 16px 0; }
+        .comic-scroll img { display: block; width: 100%; max-width: 800px; margin: 0 auto 24px; height: auto; }
+        .comic-scroll img:last-of-type { margin-bottom: 0; }
+        .page-marker { background: rgba(44, 36, 22, 0.08); color: var(--color-ink-muted); font-family: var(--font-display); font-size: 0.85rem; letter-spacing: 0.1em; text-align: center; padding: 10px; }
+        .bottom-content { background: var(--color-cream); }
+        .episode-nav { display: flex; justify-content: space-between; align-items: center; padding: 24px 20px; border-bottom: 1px solid var(--color-border); gap: 16px; max-width: 800px; margin: 0 auto; }
+        .episode-nav-top { border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border); padding: 16px 20px; }
+        .episode-nav-btn { display: flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 1rem; color: var(--color-ink-soft); text-decoration: none; padding: 12px 20px; border-radius: 24px; background: var(--color-warm-white); border: 1px solid var(--color-border); transition: all 0.3s ease; }
+        .episode-nav-btn:hover { background: var(--color-ink); color: var(--color-cream); border-color: var(--color-ink); }
+        .episode-nav-btn svg { width: 18px; height: 18px; }
+        .episode-indicator { font-family: var(--font-display); font-size: 1.1rem; color: var(--color-ink-soft); }
+        .share-section { text-align: center; padding: 40px 20px; border-bottom: 1px solid var(--color-border); max-width: 800px; margin: 0 auto; }
+        .share-intro { font-family: var(--font-body); font-size: 1.1rem; color: var(--color-ink-soft); margin-bottom: 20px; }
+        .share-buttons { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+        .share-btn { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-display); font-size: 1rem; font-weight: 500; padding: 12px 24px; border-radius: 24px; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; }
+        .share-btn svg { width: 20px; height: 20px; }
+        .share-btn.whatsapp { background: #25D366; color: white; }
+        .share-btn.whatsapp:hover { background: #20bd5a; transform: translateY(-2px); }
+        .share-btn.copy-link { background: var(--color-warm-white); color: var(--color-ink-soft); border: 1px solid var(--color-border); }
+        .share-btn.copy-link:hover { background: var(--color-ink); color: var(--color-cream); border-color: var(--color-ink); }
+        .more-stories { text-align: center; padding: 40px 20px; border-bottom: 1px solid var(--color-border); }
+        .more-stories h3 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; color: var(--color-ink); margin-bottom: 20px; }
+        .btn-library { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 1.1rem; font-weight: 500; color: var(--color-warm-white); background: var(--color-ink); padding: 14px 28px; border-radius: 30px; text-decoration: none; transition: all 0.3s ease; }
+        .btn-library:hover { background: var(--color-terracotta); transform: translateY(-2px); }
+        .btn-library svg { width: 18px; height: 18px; }
+        footer { text-align: center; padding: 40px 20px; }
+        .footer-text { font-family: var(--font-display); font-size: 1.1rem; font-style: italic; color: var(--color-ink-muted); margin-bottom: 8px; }
+        .footer-mark { font-family: var(--font-display); font-size: 0.9rem; letter-spacing: 0.15em; color: var(--color-ink-muted); margin-bottom: 20px; }
+        .footer-legal { display: flex; justify-content: center; align-items: center; gap: 16px; flex-wrap: wrap; }
+        .footer-copyright, .footer-url { font-family: var(--font-body); font-size: 0.85rem; color: var(--color-ink-muted); }
+        .footer-terms { font-family: var(--font-body); font-size: 0.85rem; color: var(--color-ink-muted); text-decoration: none; }
+        .footer-terms:hover { color: var(--color-terracotta); }
+        .scroll-top { position: fixed; bottom: 24px; right: 20px; width: 48px; height: 48px; background: var(--color-warm-white); border: 1px solid var(--color-border); border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; opacity: 0; visibility: hidden; transition: all 0.3s ease; z-index: 50; box-shadow: 0 2px 12px rgba(44, 36, 22, 0.1); }
+        .scroll-top.visible { opacity: 1; visibility: visible; }
+        .scroll-top:hover { background: var(--color-ink); border-color: var(--color-ink); }
+        .scroll-top:hover svg { stroke: var(--color-cream); }
+        .scroll-top svg { width: 24px; height: 24px; stroke: var(--color-ink-soft); }
 
-        .nav-logo svg {
-            width: 24px;
-            height: 24px;
-        }
-
-        .nav-logo-text {
-            font-family: var(--font-display);
-            font-size: 1rem;
-            font-weight: 500;
-            letter-spacing: 0.06em;
-            color: var(--color-ink);
-        }
-
-        .nav-link {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            color: var(--color-ink-soft);
-            text-decoration: none;
-        }
-
-        /* Story header */
-        .story-header {
-            background: var(--color-cream);
-            text-align: center;
-            padding: 5px 16px;
-        }
-
-        .story-series {
-            font-family: var(--font-display);
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            text-transform: uppercase;
-            color: var(--color-terracotta);
-            margin-bottom: 4px;
-        }
-
-        .finale-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--color-terracotta), var(--color-gold));
-            color: white;
-            font-family: var(--font-display);
-            font-size: 0.65rem;
-            font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            padding: 4px 12px;
-            border-radius: 12px;
-            margin-bottom: 8px;
-        }
-
-        .story-title {
-            font-family: var(--font-display);
-            font-size: 1.5rem;
-            font-weight: 400;
-            color: var(--color-ink);
-            margin-bottom: 2px;
-            letter-spacing: 0.02em;
-            line-height: 1;
-        }
-
-        .story-episode {
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            font-style: italic;
-            color: var(--color-ink-muted);
-        }
-
-        /* Comic pages - vertical scroll */
-        .comic-scroll {
-            background: var(--color-cream);
-            padding: 0;
-        }
-
-        .comic-scroll img {
-            display: block;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 24px;
-            height: auto;
-        }
-
-        .comic-scroll img:last-of-type {
-            margin-bottom: 0;
-        }
-
-        /* Image placeholder styling */
-        .image-placeholder {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            max-width: 800px;
-            margin: 0 auto 24px;
-            aspect-ratio: 3/4;
-            background: linear-gradient(135deg, #e8e2d9 0%, #d8d2c9 100%);
-            border: 2px dashed var(--color-border);
-            border-radius: 4px;
-            color: var(--color-ink-muted);
-            text-align: center;
-            padding: 40px;
-        }
-
-        .placeholder-icon {
-            font-size: 48px;
-            margin-bottom: 16px;
-            opacity: 0.5;
-        }
-
-        .placeholder-text {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-            color: var(--color-ink-soft);
-        }
-
-        .placeholder-hint {
-            font-size: 0.85rem;
-            opacity: 0.7;
-        }
-
-        /* Page number overlays */
-        .page-marker {
-            background: rgba(44, 36, 22, 0.08);
-            color: var(--color-ink-muted);
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.1em;
-            text-align: center;
-            padding: 8px;
-        }
-
-        /* Bottom sections */
-        .bottom-content {
-            background: var(--color-cream);
-        }
-
-        /* Episode navigation */
-        .episode-nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 16px;
-            border-bottom: 1px solid var(--color-border);
-            gap: 8px;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .episode-nav-btn {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            color: var(--color-ink-soft);
-            text-decoration: none;
-            padding: 10px 18px;
-            border-radius: 24px;
-            background: var(--color-warm-white);
-            border: 1px solid var(--color-border);
-            transition: all 0.3s ease;
-        }
-
-        .episode-nav-btn:hover {
-            background: var(--color-ink);
-            color: var(--color-cream);
-            border-color: var(--color-ink);
-        }
-
-        .episode-nav-btn.disabled {
-            opacity: 0.4;
-            pointer-events: none;
-        }
-
-        .episode-nav-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .episode-indicator {
-            font-family: var(--font-display);
-            font-size: 0.8rem;
-            color: var(--color-ink-muted);
-            letter-spacing: 0.1em;
-        }
-
-        /* Series complete section */
-        .series-complete {
-            text-align: center;
-            padding: 32px 16px;
-            background: linear-gradient(135deg, rgba(196, 168, 107, 0.1), rgba(160, 64, 48, 0.08));
-            border-bottom: 1px solid var(--color-border);
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .series-complete h3 {
-            font-family: var(--font-display);
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: var(--color-gold);
-            margin-bottom: 8px;
-            letter-spacing: 0.05em;
-        }
-
-        .series-complete p {
-            font-family: var(--font-body);
-            font-size: 0.95rem;
-            color: var(--color-ink-soft);
-            max-width: 400px;
-            margin: 0 auto 16px;
-            line-height: 1.7;
-        }
-
-        .btn-restart {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-display);
-            font-size: 0.85rem;
-            color: var(--color-terracotta);
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid var(--color-terracotta);
-            border-radius: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-restart:hover {
-            background: var(--color-terracotta);
-            color: var(--color-cream);
-        }
-
-        .btn-restart svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Share section */
-        .share-section {
-            text-align: center;
-            padding: 32px 16px;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .share-intro {
-            font-family: var(--font-display);
-            font-size: 0.95rem;
-            color: var(--color-ink-soft);
-            margin-bottom: 16px;
-        }
-
-        .share-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .share-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-family: var(--font-display);
-            font-size: 0.8rem;
-            font-weight: 500;
-            padding: 10px 16px;
-            border-radius: 20px;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .share-btn svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .share-btn.whatsapp {
-            background: #25D366;
-            color: white;
-        }
-
-        .share-btn.whatsapp:hover {
-            background: #20bd5a;
-        }
-
-        .share-btn.copy-link {
-            background: rgba(44, 36, 22, 0.08);
-            color: var(--color-ink-soft);
-        }
-
-        .share-btn.copy-link:hover {
-            background: rgba(44, 36, 22, 0.15);
-        }
-
-        /* More stories */
-        .more-stories {
-            text-align: center;
-            padding: 32px 16px;
-            border-bottom: 1px solid var(--color-border);
-        }
-
-        .more-stories h3 {
-            font-family: var(--font-display);
-            font-size: 0.9rem;
-            font-weight: 500;
-            color: var(--color-ink-muted);
-            margin-bottom: 12px;
-            letter-spacing: 0.08em;
-        }
-
-        .btn-library {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-family: var(--font-display);
-            font-size: 0.9rem;
-            color: var(--color-terracotta);
-            text-decoration: none;
-            padding: 10px 20px;
-            border: 1px solid var(--color-terracotta);
-            border-radius: 24px;
-            transition: all 0.3s ease;
-        }
-
-        .btn-library:hover {
-            background: var(--color-terracotta);
-            color: var(--color-cream);
-        }
-
-        .btn-library svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 32px 16px;
-        }
-
-        .footer-text {
-            font-family: var(--font-display);
-            font-size: 0.9rem;
-            font-style: italic;
-            color: var(--color-ink-muted);
-        }
-
-        .footer-mark {
-            margin-top: 8px;
-            font-family: var(--font-display);
-            font-size: 0.75rem;
-            letter-spacing: 0.15em;
-            color: var(--color-ink-soft);
-        }
-
-        .footer-legal {
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid var(--color-border);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            flex-wrap: wrap;
-        }
-
-        .footer-copyright, .footer-url {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            color: var(--color-ink-muted);
-        }
-
-        .footer-terms {
-            font-family: var(--font-body);
-            font-size: 0.7rem;
-            color: var(--color-ink-muted);
-            text-decoration: none;
-        }
-
-        .footer-terms:hover {
-            color: var(--color-terracotta);
-        }
-
-        /* Scroll to top */
-        .scroll-top {
-            position: fixed;
-            bottom: 24px;
-            right: 20px;
-            width: 48px;
-            height: 48px;
-            background: var(--color-warm-white);
-            border: 1px solid var(--color-border);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 50;
-            box-shadow: 0 2px 12px rgba(44, 36, 22, 0.1);
-        }
-
-        .scroll-top.visible {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .scroll-top:hover {
-            background: var(--color-ink);
-            border-color: var(--color-ink);
-        }
-
-        .scroll-top:hover svg {
-            stroke: var(--color-cream);
-        }
-
-        .scroll-top svg {
-            width: 24px;
-            height: 24px;
-            stroke: var(--color-ink-soft);
-        }
-
-        /* Desktop styles */
-        @media (min-width: 769px) {
-            nav {
-                padding: 16px 32px;
-            }
-
-            .story-header {
-                padding: 8px 24px;
-            }
-
-            .story-title {
-                font-size: 1.8rem;
-            }
-
-            .comic-scroll img,
-            .image-placeholder {
-                margin-bottom: 32px;
-            }
-
-            .episode-nav {
-                padding: 28px 24px;
-            }
-
-            .episode-nav-btn {
-                font-size: 0.95rem;
-                padding: 12px 24px;
-            }
-
-            .series-complete {
-                padding: 40px 24px;
-            }
-
-            .share-section {
-                padding: 48px 24px;
-            }
-
-            .share-intro {
-                font-size: 1.05rem;
-                max-width: 480px;
-                margin-left: auto;
-                margin-right: auto;
-                margin-bottom: 24px;
-            }
-
-            .share-btn {
-                font-size: 0.9rem;
-                padding: 12px 22px;
-            }
-
-            .more-stories {
-                padding: 48px 24px;
-            }
-
-            footer {
-                padding: 40px 24px;
-            }
-
-            .scroll-top {
-                bottom: 32px;
-                right: 32px;
-            }
-        }
-
-        /* Mobile styles */
         @media (max-width: 768px) {
-            .comic-scroll img,
-            .image-placeholder {
-                margin-bottom: 16px;
-            }
-
-            .comic-scroll img:last-of-type {
-                margin-bottom: 0;
-            }
-
-            .page-marker {
-                padding: 6px;
-                font-size: 0.7rem;
-            }
-
-            .scroll-top {
-                width: 44px;
-                height: 44px;
-                bottom: 20px;
-                right: 16px;
-            }
-
-            .scroll-top svg {
-                width: 20px;
-                height: 20px;
-            }
+            nav.site-nav { padding: 14px 16px; }
+            .nav-logo svg { width: 28px; height: 28px; }
+            .nav-logo-text { font-size: 1.1rem; }
+            .nav-links { gap: 16px; }
+            .nav-link { font-size: 1rem; }
+            .nav-link-home { display: none; }
+            .story-header { padding: 20px 16px 12px; }
+            .story-series { font-size: 1rem; }
+            .story-title { font-size: 2rem; }
+            .story-episode { font-size: 1.15rem; }
+            .comic-scroll img { margin-bottom: 16px; }
+            .page-marker { padding: 8px; font-size: 0.8rem; }
+            .episode-nav { padding: 20px 16px; }
+            .episode-nav-btn { padding: 10px 16px; font-size: 0.95rem; }
+            .share-section { padding: 32px 16px; }
+            .share-intro { font-size: 1rem; }
+            .share-btn { padding: 10px 20px; font-size: 0.95rem; }
+            .more-stories { padding: 32px 16px; }
+            .more-stories h3 { font-size: 1.2rem; }
+            .btn-library { font-size: 1rem; padding: 12px 24px; }
+            .scroll-top { width: 44px; height: 44px; bottom: 20px; right: 16px; }
         }
     </style>
 </head>
 <body>
-    <!-- Progress bar -->
     <div class="progress-bar" id="progressBar"></div>
 
-    <!-- Navigation -->
-    <nav>
+    <nav class="site-nav">
         <a href="../../index.html" class="nav-logo">
             <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="24" cy="24" r="22" stroke="#2C2416" stroke-width="1" fill="none" opacity="0.4"/>
@@ -630,17 +166,30 @@
             </svg>
             <span class="nav-logo-text">Uma Mythos</span>
         </a>
-        <a href="../../library.html" class="nav-link">All Stories</a>
+        <div class="nav-links">
+            <a href="../../index.html" class="nav-link-home">Home</a>
+            <a href="../../library.html" class="nav-link">All Stories</a>
+        </div>
     </nav>
 
-    <!-- Story header -->
     <header class="story-header">
         <p class="story-series">The Formless King</p>
         <h1 class="story-title">The Formless King</h1>
         <p class="story-episode">Episode 4 of 6</p>
     </header>
 
-    <!-- Comic pages - vertical scroll -->
+    <nav class="episode-nav episode-nav-top">
+        <a href="episode-3.html" class="episode-nav-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+            Episode 3
+        </a>
+        <span class="episode-indicator">Episode 4 / 6</span>
+        <a href="episode-5.html" class="episode-nav-btn">
+            Episode 5
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+        </a>
+    </nav>
+
     <main class="comic-scroll">
         <img src="images/ep4-page-01.png" alt="Page 1">
         <div class="page-marker">Page 1 of 2</div>
@@ -649,30 +198,23 @@
         <div class="page-marker">Page 2 of 2</div>
     </main>
 
-    <!-- Bottom content -->
     <div class="bottom-content">
-        <!-- Episode navigation -->
         <nav class="episode-nav">
             <a href="episode-3.html" class="episode-nav-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M15 18l-6-6 6-6"/>
-                </svg>
-                Prev Episode
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                Episode 3
             </a>
-            <span class="episode-indicator">4 / 6</span>
+            <span class="episode-indicator">Episode 4 / 6</span>
             <a href="episode-5.html" class="episode-nav-btn">
-                Next Episode
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M9 18l6-6-6-6"/>
-                </svg>
+                Episode 5
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
             </a>
         </nav>
 
         <section class="share-section">
             <p class="share-intro">If this story stayed with you, help it reach the next listener.</p>
-            
             <div class="share-buttons">
-                <a href="https://wa.me/?text=I%20just%20finished%20The%20Formless%20King%20from%20Uma%20Mythos%20%E2%80%94%20a%20beautiful%20story%20about%20a%20prince%20who%20learns%20that%20power%20isn%27t%20about%20force.%20https%3A%2F%2Fumamythos.com%2Fstories%2Fthe-formless-king%2Fepisode-1" target="_blank" class="share-btn whatsapp">
+                <a href="https://wa.me/?text=I%20loved%20this%20story%20from%20Uma%20Mythos%20%E2%80%94%20The%20Formless%20King.%20https%3A%2F%2Fumamythos.com%2Fstories%2Fthe-formless-king%2Fepisode-4" target="_blank" class="share-btn whatsapp">
                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     WhatsApp
                 </a>
@@ -687,14 +229,12 @@
             <h3>Explore more stories</h3>
             <a href="../../library.html" class="btn-library">
                 Story Library
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M5 12h14M12 5l7 7-7 7"/>
-                </svg>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
             </a>
         </section>
 
         <footer>
-            <p class="footer-text">Stories choose who carries them.</p>
+            <p class="footer-text">Stories belong to those who carry them forward.</p>
             <p class="footer-mark">Uma Mythos</p>
             <div class="footer-legal">
                 <span class="footer-copyright">© 2026 Uma Mythos</span>
@@ -704,15 +244,11 @@
         </footer>
     </div>
 
-    <!-- Scroll to top button -->
     <button class="scroll-top" id="scrollTop" onclick="scrollToTop()">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M18 15l-6-6-6 6"/>
-        </svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"/></svg>
     </button>
 
     <script>
-        // Progress bar
         const progressBar = document.getElementById('progressBar');
         const scrollTopBtn = document.getElementById('scrollTop');
 
@@ -720,23 +256,17 @@
             const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
             const scrolled = (window.scrollY / scrollHeight) * 100;
             progressBar.style.width = scrolled + '%';
-
-            if (window.scrollY > 500) {
-                scrollTopBtn.classList.add('visible');
-            } else {
-                scrollTopBtn.classList.remove('visible');
-            }
+            if (window.scrollY > 500) { scrollTopBtn.classList.add('visible'); }
+            else { scrollTopBtn.classList.remove('visible'); }
         }
 
         window.addEventListener('scroll', updateProgress);
         updateProgress();
 
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
 
         function copyLink() {
-            navigator.clipboard.writeText("I just finished The Formless King from Uma Mythos — a beautiful story about a prince who learns that power isn't about force. https://umamythos.com/stories/the-formless-king/episode-1").then(() => {
+            navigator.clipboard.writeText("I loved this story from Uma Mythos — The Formless King. https://umamythos.com/stories/the-formless-king/episode-4").then(() => {
                 const copyText = document.getElementById('copyText');
                 copyText.textContent = 'Copied!';
                 setTimeout(() => { copyText.textContent = 'Copy Link'; }, 2000);
