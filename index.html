@@ -8,6 +8,15 @@
     
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='24' cy='24' r='22' stroke='%23D4B896' stroke-width='2' fill='%232D3A4A'/%3E%3Cpath d='M24 8 C20 16, 16 20, 16 28 C16 34, 20 38, 24 38 C28 38, 32 34, 32 28 C32 20, 28 16, 24 8Z' stroke='%23D4826A' stroke-width='2' fill='none'/%3E%3Ccircle cx='24' cy='26' r='4' fill='%23D4B896'/%3E%3C/svg%3E">
     
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PDNFWKKVZ7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-PDNFWKKVZ7');
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Spectral:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
@@ -274,6 +283,19 @@
             border-radius: 3px;
         }
 
+        .ep-thumb.finale::after {
+            content: 'END';
+            position: absolute;
+            top: 4px; right: 4px;
+            background: var(--gold);
+            color: white;
+            font-family: var(--font-display);
+            font-size: 0.5rem;
+            font-weight: 600;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
         .story-cta {
             display: flex;
             gap: 12px;
@@ -399,7 +421,7 @@
             <div class="story-card">
                 <div class="story-header">
                     <span class="story-label">Featured Story</span>
-                    <span class="episode-count">5 of 6 episodes</span>
+                    <span class="episode-count">Complete • 6 episodes</span>
                 </div>
                 <h2 class="story-title">The Formless King</h2>
                 <p class="story-hook">A prince loses everything. His revenge? Becoming impossible to find.</p>
@@ -420,9 +442,13 @@
                         <img src="stories/the-formless-king/images/ep4-page-01.png" alt="Episode 4">
                         <span class="ep-num">04</span>
                     </a>
-                    <a href="stories/the-formless-king/episode-5.html" class="ep-thumb new">
+                    <a href="stories/the-formless-king/episode-5.html" class="ep-thumb">
                         <img src="stories/the-formless-king/images/ep5-page-01.png" alt="Episode 5">
                         <span class="ep-num">05</span>
+                    </a>
+                    <a href="stories/the-formless-king/episode-6.html" class="ep-thumb finale">
+                        <img src="stories/the-formless-king/images/ep6-page-01.png" alt="Episode 6 - Finale">
+                        <span class="ep-num">06</span>
                     </a>
                 </div>
                 <div class="story-cta">
@@ -430,7 +456,7 @@
                         Start Reading
                         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
                     </a>
-                    <a href="stories/the-formless-king/episode-5.html" class="btn btn-secondary">Jump to Latest</a>
+                    <a href="stories/the-formless-king/episode-6.html" class="btn btn-secondary">Read Finale</a>
                 </div>
             </div>
 
